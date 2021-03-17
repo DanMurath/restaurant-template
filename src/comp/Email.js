@@ -1,4 +1,4 @@
-import { Reveal, Tween } from "react-gsap";
+//import { Reveal, Tween } from "react-gsap";
 
 const Email = () => {
   const email = {
