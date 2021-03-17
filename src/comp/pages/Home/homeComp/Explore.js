@@ -24,7 +24,7 @@ const Explore = () => {
   ];
 
   return (
-    <div className="explore centerItems" style={{ padding: "1rem 2rem" }}>
+    <div className="explore centerItems" style={{ padding: "6rem 2rem" }}>
       <div className="titles centerText">
         <h4>{HomeText.explore.explore}</h4>
         <h1 style={{ paddingBottom: "3rem" }}>{HomeText.explore.title}</h1>
@@ -47,7 +47,7 @@ const Explore = () => {
               }}
             ></i>
             <h2>{e.title}</h2>
-            <p>{e.text}</p>
+            <p style={{ lineHeight: "1.9" }}>{e.text}</p>
           </div>
         ))}
       </div>

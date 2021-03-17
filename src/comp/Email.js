@@ -1,3 +1,5 @@
+import { Reveal, Tween } from "react-gsap";
+
 const Email = () => {
   const email = {
     icon: "fas fa-crown",
@@ -7,7 +9,7 @@ const Email = () => {
   };
 
   return (
-    <div className="email centerItems" style={{ padding: "3rem 0" }}>
+    <div className="email centerItems" style={{ padding: "4rem 0" }}>
       <i className={email.icon} style={{ fontSize: "32px" }}></i>
       <p
         style={{

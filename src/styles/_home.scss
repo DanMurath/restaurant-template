@@ -97,7 +97,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem 20%;
+    padding: 4rem 20%;
 
     .txt {
       padding-right: 4rem;
@@ -111,15 +111,19 @@
       display: inline-block;
       width: 33.333%;
     }
+
+    .metric {
+      height: 60vh;
+    }
     .contents {
-      padding-top: 20%;
+      padding-top: 27%;
     }
   }
 
   .explore {
     .container {
       display: inline-block;
-      max-width: 400px;
+      max-width: 420px;
       margin: 1rem 1rem;
     }
   }

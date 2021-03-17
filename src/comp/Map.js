@@ -11,8 +11,8 @@ const Map = () => {
     <div
       className="map centerItemsH"
       style={{
-        height: "44vh",
         marginTop: "15rem",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <div
@@ -22,8 +22,8 @@ const Map = () => {
           padding: "3rem 2rem",
           borderRadius: "8px",
           width: "90%",
+          maxWidth: "600px",
           position: "relative",
-          transform: "translateY(-10rem)",
         }}
       >
         <div className="titles centerText" style={{ paddingBottom: "1.2rem" }}>

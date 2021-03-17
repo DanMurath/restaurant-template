@@ -1,5 +1,8 @@
 import Nav from "./comp/Nav";
+
 import Home from "./comp/pages/Home/Home";
+import Menu from "./comp/pages/Menu/Menu";
+
 import Map from "./comp/Map";
 import Email from "./comp/Email";
 import Footer from "./comp/Footer";
@@ -14,6 +17,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/menu">
+            <Menu />
           </Route>
         </Switch>
         <Map />

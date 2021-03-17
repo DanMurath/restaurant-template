@@ -30,6 +30,7 @@ const Nav = () => {
         padding: "1rem",
         position: "fixed",
         width: "100%",
+        zIndex: "10000",
       }}
     >
       <div
