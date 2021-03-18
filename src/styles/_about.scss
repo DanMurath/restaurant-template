@@ -1,0 +1,71 @@
+.about {
+  .aboutIntro {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("https://images.unsplash.com/photo-1511017049469-e0d1ba0219a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  }
+
+  .explained {
+    padding: 0 3rem;
+  }
+
+  .showcase {
+    .one,
+    .two {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 3rem;
+
+      img {
+        width: 85%;
+        max-width: 464px;
+      }
+
+      h5 {
+        letter-spacing: 2px;
+      }
+
+      .tOne {
+        padding-left: 1.7rem;
+      }
+
+      .yel {
+        height: 1px;
+        width: 5rem;
+        border: 0;
+        background: #ffd71b;
+        margin-bottom: 2rem;
+        margin-top: 0.6rem;
+      }
+    }
+  }
+}
+
+// mobile
+@media (max-width: 993px) {
+  .showcase {
+    .one,
+    .two {
+      flex-direction: column;
+
+      h5 {
+        padding-top: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 993px) {
+  .about {
+    .explained {
+      padding-left: 14%;
+    }
+
+    .showcase {
+      .one,
+      .two {
+        padding: 2rem 15%;
+      }
+    }
+  }
+}

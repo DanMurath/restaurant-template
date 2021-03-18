@@ -1,0 +1,75 @@
+.contact {
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    transform: translateY(-12rem);
+    .container {
+      padding: 2rem 1rem;
+
+      .input {
+        background: #222;
+        border: none;
+        padding: 1rem;
+        margin: 1rem 0;
+        width: 96%;
+        border-radius: 2px;
+      }
+
+      .container,
+      .text {
+        display: inline-block;
+      }
+
+      textarea {
+        height: 12rem;
+      }
+
+      button {
+        margin-top: 0.8rem;
+      }
+    }
+    .text {
+      text-align: center;
+      padding-top: 2rem;
+      .socials {
+        i {
+          font-size: 27px;
+          padding: 1rem 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 993px) {
+  .contact {
+    .form {
+      flex-direction: row;
+      .container {
+        margin-right: 4rem;
+        padding: 1.8rem 0.5rem;
+
+        .input {
+          padding: 1.7rem 1rem;
+          margin: 1.1rem 0;
+        }
+
+        textarea {
+          height: 20rem;
+        }
+      }
+      .text {
+        padding-right: 27%;
+        text-align: left;
+        padding-top: 0;
+        i {
+          position: relative;
+          transform: translateX(-1rem);
+        }
+      }
+    }
+  }
+}
