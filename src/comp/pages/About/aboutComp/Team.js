@@ -1,4 +1,8 @@
 import AboutText from "./AboutText";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Team = () => {
   const team = [
@@ -9,6 +13,28 @@ const Team = () => {
     { id: 4, name: "ALEN PARKER", job: "CHEF" },
   ];
 
+  useEffect(() => {
+    if (window.innerWidth > 993) {
+      gsap.from(".teamTxt", {
+        y: 100,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".teamTxt",
+          start: "top 85%",
+        },
+      });
+
+      gsap.from(".players", {
+        y: 100,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".players",
+          start: "top 85%",
+        },
+      });
+    }
+  }, []);
+
   return (
     <div
       className="team centerText"
@@ -17,7 +43,7 @@ const Team = () => {
         padding: "3rem 0",
       }}
     >
-      <div className="titles" style={{ padding: "3rem 0" }}>
+      <div className="titles teamTxt" style={{ padding: "3rem 0" }}>
         <h4>{AboutText.team.preTitle}</h4>
         <h1>{AboutText.team.title}</h1>
       </div>

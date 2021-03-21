@@ -1,3 +1,8 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
+gsap.registerPlugin(ScrollTrigger);
+
 const Menus = () => {
   const menus = [
     { id: 1, title: "MENUS GO HERE" },
@@ -15,28 +20,38 @@ const Menus = () => {
     { id: 6, item: "ANYTHING", price: "£10", info: "Info" },
   ];
 
+  useEffect(() => {
+    if (window.innerWidth > 993) {
+      gsap.from(".menuCard", {
+        y: 80,
+        scrollTrigger: {
+          trigger: ".card",
+          start: "top bottom",
+          end: "+=1500",
+          scrub: true,
+        },
+      });
+    }
+  }, []);
+
   return (
     <div
-      className="menus centerItems"
+      className="menus centerText"
       style={{
-        background: "linear-gradient(93deg, #333 35%, #222 63%)",
         position: "relative",
-        transform: "translateY(-12rem)",
+        zIndex: "100",
       }}
     >
       {menus.map((e) => {
         return (
           <div
-            className="card"
+            className="card redoText menuCard"
             style={{
               background: "#000",
               width: "90%",
               maxWidth: "500px",
               display: "inline-block",
-              margin: "1rem",
-              zIndex: "100",
-              position: "relative",
-              transform: "translateY(12rem)",
+              transform: "translateY(-12rem)",
               padding: "2rem",
             }}
           >

@@ -1,4 +1,9 @@
 import HomeText from "./HomeText";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import { Reveal, Tween } from "react-gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Clients = () => {
   const cli = [
@@ -25,6 +30,26 @@ const Clients = () => {
     },
   ];
 
+  useEffect(() => {
+    gsap.from(".cOne", {
+      y: 80,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".cOne",
+        start: "top 85%",
+      },
+    });
+
+    gsap.from(".cTwo", {
+      y: 80,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".cTwo",
+        start: "top 85%",
+      },
+    });
+  }, []);
+
   return (
     <div
       className="clients centerText centerItems"
@@ -32,14 +57,14 @@ const Clients = () => {
         background: "linear-gradient(93deg, #333 35%, #222 63%)",
       }}
     >
-      <div className="titles">
+      <div className="titles cOne">
         <h4>{HomeText.clients.our}</h4>
         <h1>{HomeText.clients.title}</h1>
       </div>
       <div className="clientItems">
         {cli.map((c) => (
           <div
-            className="clients-contain"
+            className="clients-contain cTwo"
             style={{
               borderRadius: "14px",
               boxShadow: "0 0 10px rgb(0 0 0 / 40%)",
@@ -58,7 +83,11 @@ const Clients = () => {
           </div>
         ))}
       </div>
-      <button className="btnSpace">{HomeText.clients.read}</button>
+      <Reveal>
+        <Tween from={{ opacity: 0 }} delay={0.1}>
+          <button className="btnSpace">{HomeText.clients.read}</button>
+        </Tween>
+      </Reveal>
     </div>
   );
 };

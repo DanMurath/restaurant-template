@@ -65,6 +65,9 @@ button {
   text-align: center;
 }
 
+.redoText {
+  text-align: left;
+}
 //for vertical alignment
 .centerItems {
   display: flex;
@@ -155,6 +158,11 @@ button {
     a {
       text-decoration: none;
       color: #eee;
+      &:hover,
+      &:active {
+        color: #ffd71b;
+        transition: 0.4s ease;
+      }
     }
   }
 }

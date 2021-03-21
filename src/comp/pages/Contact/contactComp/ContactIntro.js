@@ -1,4 +1,5 @@
 import ContactText from "./ContactText";
+import { Reveal, Tween } from "react-gsap";
 
 const ContactIntro = () => {
   return (
@@ -12,8 +13,16 @@ const ContactIntro = () => {
       }}
     >
       <div className="titles centerText">
-        <h4>{ContactText.intro.preTitle}</h4>
-        <h1>{ContactText.intro.title}</h1>
+        <Reveal>
+          <Tween from={{ opacity: 0 }} delay={0.2}>
+            <h4>{ContactText.intro.preTitle}</h4>
+          </Tween>
+        </Reveal>
+        <Reveal>
+          <Tween from={{ opacity: 0 }} delay={0.6}>
+            <h1>{ContactText.intro.title}</h1>
+          </Tween>
+        </Reveal>
       </div>
     </div>
   );

@@ -1,6 +1,36 @@
 import HomeText from "./HomeText";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Mission = () => {
+  useEffect(() => {
+    if (window.innerWidth > 993) {
+      gsap.from(".txt", {
+        y: 130,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: ".txt",
+          start: "top bottom",
+          end: "+=1400",
+          scrub: true,
+        },
+      });
+
+      gsap.from(".img", {
+        y: -90,
+        opacity: 0.3,
+        scrollTrigger: {
+          trigger: ".img",
+          start: "top bottom",
+          end: "+=1400",
+          scrub: true,
+        },
+      });
+    }
+  }, []);
+
   return (
     <div className="mission">
       <div

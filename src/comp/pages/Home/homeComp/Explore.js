@@ -1,4 +1,9 @@
 import HomeText from "./HomeText";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import { Reveal, Tween } from "react-gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Explore = () => {
   const exp = [
@@ -23,16 +28,36 @@ const Explore = () => {
     },
   ];
 
+  useEffect(() => {
+    gsap.from(".eOne", {
+      y: 80,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".eOne",
+        start: "top 85%",
+      },
+    });
+
+    gsap.from(".eTwo", {
+      y: 80,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".eTwo",
+        start: "top 87%",
+      },
+    });
+  }, []);
+
   return (
     <div className="explore centerItems" style={{ padding: "6rem 2rem" }}>
-      <div className="titles centerText">
+      <div className="titles centerText eOne">
         <h4>{HomeText.explore.explore}</h4>
         <h1 style={{ paddingBottom: "3rem" }}>{HomeText.explore.title}</h1>
       </div>
       <div className="containers">
         {exp.map((e) => (
           <div
-            className="container"
+            className="container eTwo"
             style={{
               background: "#222222",
               padding: "3rem 1.3rem",
@@ -51,7 +76,11 @@ const Explore = () => {
           </div>
         ))}
       </div>
-      <button className="btnSpace">{HomeText.overview.menu}</button>
+      <Reveal>
+        <Tween from={{ opacity: 0 }} delay={0.1}>
+          <button className="btnSpace">{HomeText.overview.menu}</button>
+        </Tween>
+      </Reveal>
     </div>
   );
 };

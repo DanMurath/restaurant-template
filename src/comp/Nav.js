@@ -52,16 +52,16 @@ const Nav = () => {
           </div>
         </MediaQuery>
         <ul className={state ? "navMenu active" : "navMenu"}>
-          <Link to="/">
+          <Link to="/" onClick={click}>
             <li>{nav.home}</li>
           </Link>
-          <Link to="/menu">
+          <Link to="/menu" onClick={click}>
             <li>{nav.menu}</li>
           </Link>
-          <Link to="/about">
+          <Link to="/about" onClick={click}>
             <li>{nav.about}</li>
           </Link>
-          <Link to="/contact">
+          <Link to="/contact" onClick={click}>
             <li>{nav.contact}</li>
           </Link>
         </ul>

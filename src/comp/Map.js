@@ -16,7 +16,7 @@ const Map = () => {
       }}
     >
       <div
-        className="card"
+        className="card mOne"
         style={{
           background: "linear-gradient(#222, #000)",
           padding: "3rem 2rem",

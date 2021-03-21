@@ -7,4 +7,16 @@
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 81%, 0 100%);
   }
+
+  .card {
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 993px) {
+  .menu {
+    .card {
+      margin: 1rem 4.7rem;
+    }
+  }
 }

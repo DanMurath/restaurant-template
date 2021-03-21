@@ -12,7 +12,6 @@
     .one,
     .two {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       padding: 2rem 3rem;
 
@@ -25,8 +24,12 @@
         letter-spacing: 2px;
       }
 
-      .tOne {
-        padding-left: 1.7rem;
+      //.tOne {
+      // padding-left: 1.7rem;
+      // }
+
+      .text {
+        max-width: 400px;
       }
 
       .yel {
@@ -37,6 +40,9 @@
         margin-bottom: 2rem;
         margin-top: 0.6rem;
       }
+    }
+    .two {
+      justify-content: flex-end;
     }
   }
 }
@@ -65,6 +71,19 @@
       .one,
       .two {
         padding: 2rem 15%;
+      }
+
+      .tOne {
+        position: relative;
+        left: -5rem;
+      }
+      .tTwo {
+        position: relative;
+        right: -6rem;
+      }
+      .sTwo,
+      .sFou {
+        padding-bottom: 9rem;
       }
     }
   }

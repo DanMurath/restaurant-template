@@ -11,13 +11,13 @@ const Intro = () => {
     >
       <div className="title">
         <Reveal>
-          <Tween from={{ opacity: 0 }}>
+          <Tween from={{ opacity: 0 }} delay={0.2}>
             <h1>{HomeText.intro.title}</h1>
           </Tween>
         </Reveal>
 
         <Reveal>
-          <Tween from={{ opacity: 0 }} delay={0.1}>
+          <Tween from={{ opacity: 0 }} delay={0.35}>
             <p
               style={{
                 fontSize: "17px",
@@ -29,7 +29,7 @@ const Intro = () => {
           </Tween>
         </Reveal>
         <Reveal>
-          <Tween from={{ opacity: 0 }} delay={0.2}>
+          <Tween from={{ opacity: 0 }} delay={0.5}>
             <button
               style={{
                 marginTop: "0.35rem",

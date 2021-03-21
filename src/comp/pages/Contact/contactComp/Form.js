@@ -1,6 +1,35 @@
 import ContactText from "./ContactText";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+//import { Reveal, Tween } from "react-gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Form = () => {
+  useEffect(() => {
+    if (window.innerWidth > 993) {
+      gsap.from(".formOne", {
+        y: 180,
+        scrollTrigger: {
+          trigger: "formOne",
+          start: "top 0%",
+          end: "+=1900",
+          scrub: true,
+        },
+      });
+
+      gsap.from(".formTwo", {
+        y: -180,
+        scrollTrigger: {
+          trigger: "formTwo",
+          start: "top 0%",
+          end: "+=1900",
+          scrub: true,
+        },
+      });
+    }
+  }, []);
+
   const socials = [
     { id: 1, icon: "fab fa-facebook-f" },
     { id: 2, icon: "fab fa-twitter" },
@@ -13,14 +42,13 @@ const Form = () => {
     <div
       className="form"
       style={{
-        //      background: "#ffd71b",
         height: "80vh",
         position: "relative",
         zIndex: "20",
       }}
     >
       <div
-        className="container"
+        className="container formOne"
         style={{
           background: "#000",
           width: "80%",
@@ -49,7 +77,7 @@ const Form = () => {
         </form>
       </div>
 
-      <div className="text" style={{ color: "#000" }}>
+      <div className="text formTwo" style={{ color: "#000" }}>
         <h1>{ContactText.form.titleOne}</h1>
         <p>{ContactText.form.at}</p>
         <p>{ContactText.form.num}</p>
