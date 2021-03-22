@@ -1,7 +1,6 @@
 import ContactText from "./ContactText";
 import { useEffect } from "react";
 import { gsap } from "gsap";
-//import { Reveal, Tween } from "react-gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,7 +41,6 @@ const Form = () => {
     <div
       className="form"
       style={{
-        height: "80vh",
         position: "relative",
         zIndex: "20",
       }}
@@ -79,8 +77,14 @@ const Form = () => {
 
       <div className="text formTwo" style={{ color: "#000" }}>
         <h1>{ContactText.form.titleOne}</h1>
-        <p>{ContactText.form.at}</p>
-        <p>{ContactText.form.num}</p>
+        <div className="at connect">
+          <i className="fas fa-envelope"></i>
+          <p>{ContactText.form.at}</p>
+        </div>
+        <div className="phone connect">
+          <i className="fas fa-phone"></i>
+          <p>{ContactText.form.num}</p>
+        </div>
         <h1>{ContactText.form.titleTwo}</h1>
         <div className="socials">
           {socials.map((e) => {
@@ -88,6 +92,13 @@ const Form = () => {
           })}
         </div>
         <h1>{ContactText.form.titleThr}</h1>
+        <div className="add connect">
+          <i className="fas fa-location-arrow"></i>
+          <div className="addText">
+            <p>Queen Street, Cardiff</p>
+            <p>Wales, CF23 7CG</p>
+          </div>
+        </div>
       </div>
     </div>
   );

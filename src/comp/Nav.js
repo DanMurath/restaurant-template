@@ -1,18 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MediaQuery from "react-responsive";
 import { Link } from "react-router-dom";
 
-//TODO: figure out react media queryv
-//      we can use max-width for other medias
-//      finish navbar
-//      finish off home page: no more than 2hrs
-//      get menu page prototype done || to fully finished
-
 const Nav = () => {
   const [state, setState] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const click = () => {
     state === false ? setState(true) : setState(false);
+  };
+
+  let ee = new Audio("/ee.mp3");
+
+  const clk = () => {
+    ee.play();
   };
 
   const nav = {
@@ -22,12 +23,24 @@ const Nav = () => {
     contact: "CONTACT",
   };
 
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      let scroll = document.scrollingElement.scrollTop;
+      if (scroll >= 3) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    });
+  }, []);
+
   return (
     <div
       className="nav"
       style={{
-        backgroundColor: "transparent",
-        padding: "1rem",
+        transition: "0.4s",
+        backgroundColor: scrolled ? "rgba(0,0,0,0.7)" : "transparent",
+        padding: "1.6rem",
         position: "fixed",
         width: "100%",
         zIndex: "10000",
@@ -44,7 +57,7 @@ const Nav = () => {
         }}
       >
         <div className="logo">
-          <i className="fas fa-crown"></i>
+          <i className="fas fa-crown" onClick={clk}></i>
         </div>
         <MediaQuery maxWidth={993}>
           <div className="menu" onClick={click}>

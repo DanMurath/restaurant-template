@@ -1,3 +1,10 @@
+.connect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1.1rem;
+}
+
 .contact {
   .form {
     display: flex;
@@ -5,7 +12,8 @@
     justify-content: center;
     align-items: center;
     z-index: -1;
-    transform: translateY(-12rem);
+    transform: translateY(-7rem);
+    height: 120vh;
     .container {
       padding: 2rem 1rem;
 
@@ -36,6 +44,11 @@
     .text {
       text-align: center;
       padding-top: 2rem;
+      .addText {
+        p {
+          padding: 0.1rem 0;
+        }
+      }
       .socials {
         i {
           font-size: 27px;
@@ -47,9 +60,14 @@
 }
 
 @media (min-width: 993px) {
+  .connect {
+    justify-content: start;
+  }
   .contact {
     .form {
       flex-direction: row;
+      transform: translateY(-12rem);
+      height: 80vh;
       .container {
         margin-right: 4rem;
         padding: 1.8rem 0.5rem;
@@ -72,6 +90,14 @@
           transform: translateX(-1rem);
         }
       }
+    }
+  }
+}
+
+@media (max-width: 993px) {
+  .connect {
+    i {
+      padding-right: 0.4rem;
     }
   }
 }
